@@ -12,3 +12,14 @@ oh-my-posh init pwsh --config "~\.config\oh-my-posh\catppuccin.omp.json" | Invok
 # Environment Variables
 # -----------------------------------------------------------------------------
 $env:EDITOR = "vim"
+
+
+# -----------------------------------------------------------------------------
+# PSReadLine 
+# -----------------------------------------------------------------------------
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineKeyHandler -Chord 'Ctrl+j' -Function NextHistory
+Set-PSReadLineKeyHandler -Chord 'Ctrl+k' -Function PreviousHistory
+
